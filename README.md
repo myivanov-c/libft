@@ -1,119 +1,113 @@
-# Libft – 42 Lisboa
+# Libft – My Custom C Library
 
- A custom standard C library reimplementation  
- Project validated with a total score of **125%**
-
----
-
-## 📖 About
-
-**Libft** is a foundational project from the 42 programming school.  
-Its purpose is to rebuild essential functions from the C standard library — without relying on them — to deeply understand how memory, strings, and data structures behave at a low level.
+> 42 Project | ✅ Grade: 125%  
+> Goal: Recreate standard C functions from scratch to build a personal library used in all future 42 projects.
 
 ---
 
-## 🛠️ Skills Gained
+## Overview
 
-- Manual memory management
-- Mastery of pointers and buffer manipulation
-- Building a static library (`libft.a`)
-- String and character handling from scratch
-- Linked list implementation and traversal
-- Debugging and problem solving in pure C
-- Clean code practices under Norminette
+This project consists of implementing a set of fundamental C functions from the standard C library (`libc`).  
+It includes memory management, string manipulation, character checks, and linked list operations.
+
+Libft is the **foundation for all projects in the 42 curriculum** – every future C project will use it.
 
 ---
 
-## 📦 Project Structure
+## Functions Implemented
 
-### Part 1 – Libc Functions
+### Part 1 – Libc functions re-coded
 
-Functions re-implemented:
+| Category          | Functions                                        |
+|------------------|--------------------------------------------------|
+| Character check  | `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint` |
+| String length & manipulation | `ft_strlen`, `ft_strlcpy`, `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp`, `ft_strdup`, `ft_strnstr` |
+| Case conversion  | `ft_tolower`, `ft_toupper` |
+| Memory allocation| `ft_calloc` |
 
-- `ft_isalpha`  
-- `ft_isdigit`  
-- `ft_isalnum`  
-- `ft_isascii`  
-- `ft_isprint`  
-- `ft_strlen`  
-- `ft_memset`  
-- `ft_bzero`  
-- `ft_memcpy`  
-- `ft_memmove`  
-- `ft_strlcpy`  
-- `ft_strlcat`  
-- `ft_toupper`  
-- `ft_tolower`  
-- `ft_strchr`  
-- `ft_strrchr`  
-- `ft_strncmp`  
-- `ft_memchr`  
-- `ft_memcmp`  
-- `ft_strnstr`  
-- `ft_atoi`  
-- `ft_calloc`  
-- `ft_strdup`
+### Part 2 – Additional utility functions
 
-### Part 2 – Additional Functions
+| Category     | Functions                                      |
+|-------------|------------------------------------------------|
+| Conversion  | `ft_atoi`, `ft_itoa`                           |
+| String split| `ft_split`, `ft_strjoin`, `ft_strtrim`, `ft_substr` |
+| Output      | `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd` |
 
-- `ft_substr`  
-- `ft_strjoin`  
-- `ft_strtrim`  
-- `ft_split`  
-- `ft_itoa`  
-- `ft_strmapi`  
-- `ft_striteri`  
-- `ft_putchar_fd`  
-- `ft_putstr_fd`  
-- `ft_putendl_fd`  
-- `ft_putnbr_fd`
+### Bonus – Linked List Functions
 
-### Bonus – Linked List Module
-
-Implemented from scratch:
-
-- `ft_lstnew`  
-- `ft_lstadd_front`  
-- `ft_lstsize`  
-- `ft_lstlast`  
-- `ft_lstadd_back`  
-- `ft_lstdelone`  
-- `ft_lstclear`  
-- `ft_lstiter`  
-- `ft_lstmap`
+| List Operations | Description              |
+|----------------|--------------------------|
+| `ft_lstnew`     | Create a new list node   |
+| `ft_lstadd_front` | Add node to front        |
+| `ft_lstadd_back` | Add node to back         |
+| `ft_lstsize`    | Count nodes              |
+| `ft_lstlast`    | Get last node            |
+| `ft_lstdelone`  | Delete one node          |
+| `ft_lstclear`   | Delete entire list       |
+| `ft_lstiter`    | Apply function to each node |
+| `ft_lstmap`     | Create new list from function mapping |
 
 ---
 
-## 🧹 Makefile Commands
+## ⚙️ Compilation
 
-| Command       | Description                          |
-|---------------|--------------------------------------|
-| `make`        | Compile all `.c` files into `libft.a` |
-| `make clean`  | Remove object files (`*.o`)          |
-| `make fclean` | Remove object files and `libft.a`    |
-| `make re`     | Clean and recompile the library      |
+```bash
+make            # Compile libft.a
+make bonus      # Compile libft.a + bonus
+make clean      # Remove .o files
+make fclean     # Remove .o files + libft.a
+make re         # Recompile everything
+```
+
+To use in your project, include this header:
+
+```c
+#include "libft.h"
+```
+
+Then run the this command to compile everything in the library and create the library itself:
+
+```bash
+make bonus
+```
+
+Finaly compile your code with the library:
+
+```bash
+gcc -Wall -Wextra -Werror your_code.c libft.a
+```
 
 ---
 
-## 📌 Notes
+## What I Learned
 
-- All functions were implemented in C, following the **Norminette** style guide.  
-- No standard C library functions were used unless explicitly allowed by the project guidelines.  
-- The project includes **all mandatory and bonus parts**, including full linked list implementation.  
-- This library is designed to be modular, readable, and reusable across different 42 projects and personal development.
+- Deep understanding of **memory handling** in C  
+- Manual implementation of **malloc, string, and list logic**  
+- Writing **clean, modular, and reusable** C functions  
+- Managing a project with **Makefile and .h structure**  
+- Complying strictly with the **42 Norminette** coding standards
+
+---
+
+## 📁 Project Structure
+
+```bash
+libft/
+├── ft_*.c              # All functions implementation
+├── libft.h             # Header file with prototypes
+├── Makefile            # Compilation script
+```
 
 ---
 
 ## 👤 Author
 
-**Mykyta Ivanov**  
-Student @ 42 Lisboa  
-GitHub: [@myivanov-c](https://github.com/myivanov-c)
+- **Mykyta Ivanov**  
+- Student at 42  
+- GitHub: [@myivanov-c](https://github.com/myivanov-c)
 
 ---
 
-## ✅ Project Status
+## 📝 License
 
- Completed  
- Validated with 125% score at 42  
- Ready to be reused and expanded in future projects
+This project is open-source and free to use.
